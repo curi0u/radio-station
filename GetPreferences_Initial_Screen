@@ -37,10 +37,38 @@
 		<h1>FLOW NATION</h1>
 
 		
-        <p>This is a paragraph.</p> 
-        <input type="button" class="button" value="+">
-        
+        <p>What's your favorite genre(s) of music?</p> 
+        <input type="button" class="button" value="Pop">
+        <input type="button" class="button" value="Electronic">
+        <input type="button" class="button" value="Heavy Metal">
+        <input type="button" class="button" value="Hip Hop">
+        <input type="button" class="button" value="Popular">
+        <input type="button" class="button" value="Jazz">
+        <input type="button" class="button" value="Rock">
+        <input type="button" class="button" value="Country">
+        <input type="button" class="button" value="Classical">
+        <input type="button" class="button" value="Blues">
+        <input type="button" class="button" value="Folk">
+        <input type="button" class="button" value="Soul">
+        <input type="button" class="button" value="Vocal">
+        <input type="button" class="button" value="Instrumental">
+        <input type="button" class="button" value="Opera">
+        <input type="button" class="button" value="Soundtrack">
 
+		<p>Who are your favorite DJ artists?</p> 
+        <input type="button" class="button" value="Martin Garrix">
+        <input type="button" class="button" value="Marshmello">
+        <input type="button" class="button" value="Alan Walker">
+        <input type="button" class="button" value="Alesso">
+        <input type="button" class="button" value="The Chainsmokers">
+        <input type="button" class="button" value="Carl Cox">
+        <input type="button" class="button" value="Skrillex">
+        <input type="button" class="button" value="Oliver Heldens">
+        <input type="button" class="button" value="Zedd">
+        <input type="button" class="button" value="R3HAB">
+        <input type="button" class="button" value="DJ Snake">
+        <input type="button" class="button" value="Calvin Harris">
+        
 	</body>
 
 <html>
