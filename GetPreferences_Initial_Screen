@@ -8,7 +8,7 @@
 
         .button 
         {
-          background-color: #CBC3E3;
+          background-color: #673ab7;
           border: none;
           color: white;
           padding: 15px 32px;
@@ -21,7 +21,13 @@
         }
         
         .button {border-radius: 12px;}
+        .button:hover {background-color: #3e236e}
 
+        .button:active {
+          background-color: #3e236e;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+          
 		</style>
 	</head>
 
@@ -31,8 +37,9 @@
 		<h1>FLOW NATION</h1>
 
 		
-        <p>Insert Genre Type Here.</p> 
-        <input type="button" class="button" value="Input Button">
+        <p>This is a paragraph.</p> 
+        <input type="button" class="button" value="+">
+        
 
 	</body>
 
