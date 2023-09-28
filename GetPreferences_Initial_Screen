@@ -10,6 +10,7 @@
         {
           background-color: #673ab7;
           border: none;
+		  border-radius: 12px;
           color: white;
           padding: 15px 32px;
           text-align: center;
@@ -20,14 +21,15 @@
           cursor: pointer;
         }
         
-        .button {border-radius: 12px;}
         .button:hover {background-color: #3e236e}
 
-        .button:active {
+        .button:active
+		{
           background-color: #3e236e;
           box-shadow: 0 5px #666;
           transform: translateY(4px);
-          
+        }
+		
 		</style>
 	</head>
 
