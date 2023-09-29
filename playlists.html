@@ -5,48 +5,57 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/playlist.css">
     <title>FlowNation Radio</title>
-    
   </head>
   
   <body>
     <script src="https://kit.fontawesome.com/33fe2002ae.js"></script>
 
-    <div class="wrapper">
-
-      <!-- Navigation Sidebar -->
-      <div class="sidebar">
-        <h2><a href="#">FlowNation</a></h2>
-          <ul>
-              <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-              <li><a href="#"><i class="fas fa-magnifying-glass"></i>Search</a></li>
-              <li><a href="#"><i class="fas fa-music"></i>Playlists</a></li>
-              <li><a href="#"><i class="fas fa-gear"></i>Preferences</a></li>
-          </ul> 
-        <div class="social_media">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
+    <!-- Navigation Sidebar -->
+    <div id="sidebar">
+      <h2><a href="#">FlowNation</a></h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="#"><i class="fas fa-magnifying-glass"></i>Search</a></li>
+            <li><a href="#"><i class="fas fa-music"></i>Playlists</a></li>
+            <li><a href="#"><i class="fas fa-gear"></i>Preferences</a></li>
+        </ul> 
+      <div id="social-media">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
-
-      <!-- Content Area: place your user profile stuff into here-->
-      <div class="main_content">  
-        <header>
-            <a class="back" href="#"><i class="fas fa-arrow-left"></i>Back to Playlists</a>
-            <div class="current-song">
-                <label>Selected Song:</label>
-                <!-- TODO: Make this clickable -->
-                <img src="https://images5.fanpop.com/image/photos/28000000/randomised-random-28065165-1024-819.jpg"/>
-                <div class="song-info">
-                    <a class="song" href="#">Song Name</a>
-                    <a class="artist" href="#">Artist Name</a>
-                </div>
+    </div>
+    
+    <div id="main-content">
+      <!-- Header Topbar -->
+      <header>
+        <a id="back" href="#"><i class="fas fa-arrow-left"></i>Back to Playlists</a>
+        <div id="current-song">
+            <label>Selected Song:</label>
+            <img src="https://images5.fanpop.com/image/photos/28000000/randomised-random-28065165-1024-819.jpg"/>
+            <div id="song-info">
+                <a id="song" href="#">Song Name</a>
+                <a id="artist" href="#">Artist Name</a>
             </div>
-        </header>
-        <div class="content">
-
+        </div>
+      </header>
+    
+      <!-- Content Area: place your user profile stuff into here-->
+      <div id="content">  
+        <div id="playlists">
+            <div class="playlist">
+                <p>test</p>
+            </div>
+            <div class="playlist">
+                <p>test</p>
+            </div>
+            <div class="playlist">
+                <p>test</p>
+            </div>
+            <div class="playlist">
+                <p>test</p>
+            </div>
         </div>
       </div>
     </div>
