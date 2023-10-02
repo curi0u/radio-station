@@ -1,0 +1,184 @@
+/* Playlists Page CSS File */
+#main-content {
+  background-color: burlywood;
+  flex-direction: column;
+}
+
+#main-content header{
+  min-height: 75px;
+  width: 100%;
+	height: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #4b4276;
+}
+
+/* Header */
+
+#back{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #bdb8d7;
+}
+
+#back:hover{
+  color: #fff;
+  background-color: #594f8d;
+}
+
+#back .fas{
+  width: 25px;
+}
+
+#current-song{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  column-gap: 15px;
+}
+
+#current-song label{
+  color: #bdb8d7;
+}
+
+#current-song img{
+  align-items: end;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+#song-info{
+  display: grid;
+  justify-content: left;  
+  align-items: center;
+  column-gap: 10px;
+}
+
+#song-info a{
+  color: #bdb8d7;
+}
+
+#song-info a:hover{
+  color: #fff;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  margin: 1em 0;
+  padding: 0;
+}
+
+.playlists {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.playlist-box {
+  display: flex;
+  width: 80%;
+  height: 100px;
+  background-color: #4b4276;
+  margin: 20px 0px;
+  border-radius: 3px;
+}
+
+.playlist-box img {
+  display: flex;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25em;
+  width: 20%;
+  height: 100%;
+  margin-right: 5px;
+}
+
+.playlist-name {
+  color: white;
+}
+
+.song-count {
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.timetable {
+  width: 50%;
+}
+
+table, th, td {
+  border-left: solid 2px #594f8d;
+  border-right: solid 2px #594f8d;
+  border-collapse: collapse;
+}
+
+th {
+  border-top: none;
+  color:white;
+}
+
+td {
+  color: rgb(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.button-box {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 1;
+  margin-left: 5px;
+}
+
+.button-box button {
+  padding: 3px 3px;
+  border-radius: 25px;
+  font-weight: bold;
+  white-space: normal;
+  width: 80%;
+  height: 40%;
+  border: none;
+  cursor: pointer;
+}
+
+.button-box button:hover {
+  background-color: rgb(255, 255, 255, 0.7);
+}
+
+#view-more-button {
+  font-weight: bold;
+  font-size: 2em;
+  padding: 3px 3px;
+  margin-top: 2%;
+  border-radius: 25px;
+  white-space: normal;
+  width: 7em;
+  border: none;
+  cursor: pointer;
+}
+
+#view-more-button:hover {
+  background-color: rgb(255, 255, 255, 0.7);
+}
