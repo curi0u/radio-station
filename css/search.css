@@ -1,0 +1,154 @@
+#main-content {
+  background-color: burlywood;
+  flex-direction: column;
+}
+
+/* Style the search container */
+#search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+/* Style the search bar container */
+#search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1; /* Background color for the search bar */
+  border: solid 1px black;
+  border-radius: 25px; /* Adjust this value to change the roundness */
+  padding: 5px 10px;
+  width: 700px; /* Adjust the width as needed */
+}
+
+/* Style the search bar input */
+#search-bar-input {
+  border: none;
+  background: none;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Style the search button */
+#search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  margin-left: 10px;
+  color: black; /* Color for the magnifying glass icon */
+}
+
+#song-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.song-box {
+  display: flex;
+  width: 80%;
+  height: 100px;
+  background-color: #4b4276;
+  margin: 20px 0px;
+  border-radius: 3px;
+}
+
+.song-box img {
+  display: flex;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.info-box, .album-box, .duration-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.25em;
+  height: 100%;
+  margin-right: 5px;
+}
+
+.info-box {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 30%;
+}
+
+.album-box {
+  width: 30%;
+}
+
+.duration-box {
+  width: 5%;
+}
+
+.song-name {
+  color: white;
+}
+
+.artist-name {
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.album-name {
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.artist-name:hover, .album-name:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.duration {
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.button-box {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.25em;
+  width: auto;
+  height: 100%;
+  margin-right: 5px;
+}
+
+.button-box button {
+  font-weight: bold;
+  padding: 3px 3px;
+  border-radius: 25px;
+  white-space: normal;
+  width: 80%;
+  border: none;
+  cursor: pointer;
+}
+
+.button-box button:hover {
+  background-color: rgb(255, 255, 255, 0.7);
+}
+
+#view-more-button {
+  font-weight: bold;
+  font-size: 2em;
+  padding: 3px 3px;
+  margin-top: 2%;
+  border-radius: 25px;
+  white-space: normal;
+  width: 7em;
+  border: none;
+  cursor: pointer;
+}
+
+#view-more-button:hover {
+  background-color: rgb(255, 255, 255, 0.7);
+}
