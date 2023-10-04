@@ -1,0 +1,100 @@
+/* Common Page CSS File */
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Primary Flexbox */
+
+html{
+  height: 100%;
+}
+  
+body{
+  height: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #f3f5f9;
+}
+
+#main-content
+{
+  height: 100%;
+  margin-left: 200px;
+}
+/* Sidebar */
+
+#sidebar{
+	min-width: 200px;
+	max-width: 200px;
+  height: 100%;
+  position: fixed;
+  background: #4b4276;
+  padding: 30px 0px;
+}
+
+#sidebar h2{
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#sidebar h2 a{
+  color: #fff;
+}
+
+#sidebar ul li{
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}    
+
+#sidebar ul li a{
+  padding: 15px;
+  color: #bdb8d7;
+  display: block;
+}
+
+#sidebar ul li a .fas{
+  width: 25px;
+}
+
+#sidebar ul li:hover{
+  background-color: #594f8d;
+}
+    
+#sidebar ul li:hover a{
+  color: #fff;
+}
+
+#sidebar #social-media{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  padding-bottom: 10px;
+}
+
+#sidebar #social-media a{
+  display: block;
+  width: 40px;
+  background: #594f8d;
+  height: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #bdb8d7;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+@media (max-height: 500px){
+  #social-media{
+    display: none !important;
+  }
+}
