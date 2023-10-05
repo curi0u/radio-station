@@ -24,6 +24,7 @@ body{
 #main-content{
   height: 100%;
   display: flex;
+  flex-direction: column;
   margin-left: 200px;
 }
 
