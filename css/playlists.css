@@ -1,8 +1,3 @@
-/* #main-content * {
-  border-style: dashed;
-  border-color: black;
-} */
-
 #main-content header {
   min-height: 75px;
   width: 100%;
@@ -102,7 +97,7 @@
 
 #playlists .playlist img {
   border: #4b4276;
-  border-style: dashed;
+  border-style: solid;
   height: 100%;
   margin-right: 10px;
 }
@@ -162,7 +157,7 @@
 
 #playlist-info {
   flex: 1;
-  border-left: dashed;
+  border-left: solid;
   border-color: black;
   display: flex;
   flex-direction: column;
@@ -213,7 +208,7 @@
 
 #playlist-songs .playlist-song img {
   border: #4b4276;
-  border-style: dashed;
+  border-style: solid;
   height: 100%;
   margin-right: 10px;
 }
