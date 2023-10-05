@@ -1,4 +1,4 @@
-/* Playlists Page CSS File */
+/* 'Add to Playlist' Page CSS File */
 #main-content {
   background-color: burlywood;
   flex-direction: column;
@@ -79,6 +79,8 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+
+/* Playlist Library */
 
 .playlists {
   display: flex;
