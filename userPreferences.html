@@ -6,6 +6,25 @@
     <link rel="stylesheet" href="css/preferences.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> <!-- Include Font Awesome library -->
     <link rel="stylesheet" href="css/listener_style.css">
+
+
+    <style>
+      .grid-container {
+        display: grid;
+        gap: 10px 50px;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+      }
+      
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+      }
+      </style>
+
     <title>FlowNation Radio</title>
   </head>
   
@@ -29,7 +48,9 @@
 
     <!-- Content Area: place your user profile stuff into here-->
     <main id="main-content">          
-              <p>What's your favorite genre(s) of music?</p> 
+              <p style="font-size: 20px;">What's your favorite genre(s) of music?</p> 
+
+              <div class="grid-container">
               <input type="button" class="button" value="Pop">
               <input type="button" class="button" value="Electronic">
               <input type="button" class="button" value="Heavy Metal">
@@ -46,8 +67,11 @@
               <input type="button" class="button" value="Instrumental">
               <input type="button" class="button" value="Opera">
               <input type="button" class="button" value="Soundtrack">
-      
-          <p>Who are your favorite DJ artists?</p> 
+            </div>
+
+            <p style="font-size: 20px;">Who are your favorite DJ artists?</p> 
+
+              <div class="grid-container">
               <input type="button" class="button" value="Martin Garrix">
               <input type="button" class="button" value="Marshmello">
               <input type="button" class="button" value="Alan Walker">
@@ -60,7 +84,12 @@
               <input type="button" class="button" value="R3HAB">
               <input type="button" class="button" value="DJ Snake">
               <input type="button" class="button" value="Calvin Harris">
-              
+            </div>
+            
+            <div class = "row5">
+              <input type="button" class="button" value="Next">
+            </div>
+    
 
     </main>
   </body>
