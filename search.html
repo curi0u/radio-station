@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> <!-- Include Font Awesome library -->
+    
     <script src="js/search.js"></script>
     <title>Search</title>
     
@@ -41,92 +42,20 @@
           </div>
         </div>
       </section>
-
+    
+      <div id="no-results-message">No results found</div>
+      
       <!-- Search Results -->
       <section>
-        <div id="song-list">
-
-          <div class="song-box">
-            <img src="img/temp_music_icon.png" alt="Song Image">
-            <div class="info-box">
-              <p class="song-name">Song Name #1</p>
-              <p class="artist-name">Artist Name #1</p>
-            </div>
-            <div class="album-box">
-              <p class="album-name">Album Name #1</p>
-            </div>
-            <div class="duration-box">
-              <p class="duration">0:00</p>
-            </div>
-            <div class="button-box">
-              <button type="button" class="favorite-button"><i class="fa-solid fa-heart" style="color: red"></i> Favorite</button>
-              <button type="button" class="play-button"><i class="fa-solid fa-play" style="color: green"></i> Play</button>
-              <button type="button" class="playlist-add-button" onClick="redirectToAnotherPage()"><i class="fa-solid fa-circle-plus" style="color: blue"></i> Add to playlist</button>
-            </div>
-          </div>
-
-          <div class="song-box">
-            <img src="img/temp_music_icon.png" alt="Song Image">
-            <div class="info-box">
-              <p class="song-name">Song Name #2</p>
-              <p class="artist-name">Artist Name #2</p>
-            </div>
-            <div class="album-box">
-              <p class="album-name">Album Name #2</p>
-            </div>
-            <div class="duration-box">
-              <p class="duration">0:00</p>
-            </div>
-            <div class="button-box">
-              <button type="button" class="favorite-button"><i class="fa-solid fa-heart" style="color: red"></i> Favorite</button>
-              <button type="button" class="play-button"><i class="fa-solid fa-play" style="color: green"></i> Play</button>
-              <button type="button" class="playlist-add-button" onClick="redirectToAnotherPage()"><i class="fa-solid fa-circle-plus" style="color: blue"></i> Add to playlist</button>
-            </div>
-          </div>
-
-          <div class="song-box">
-            <img src="img/temp_music_icon.png" alt="Song Image">
-            <div class="info-box">
-              <p class="song-name">Song Name #3</p>
-              <p class="artist-name">Artist Name #3</p>
-            </div>
-            <div class="album-box">
-              <p class="album-name">Album Name #3</p>
-            </div>
-            <div class="duration-box">
-              <p class="duration">0:00</p>
-            </div>
-            <div class="button-box">
-              <button type="button" class="favorite-button"><i class="fa-solid fa-heart" style="color: red"></i> Favorite</button>
-              <button type="button" class="play-button"><i class="fa-solid fa-play" style="color: green"></i> Play</button>
-              <button type="button" class="playlist-add-button" onClick="redirectToAnotherPage()"><i class="fa-solid fa-circle-plus" style="color: blue"></i> Add to playlist</button>
-            </div>
-          </div>
-
-          <div class="song-box">
-            <img src="img/temp_music_icon.png" alt="Song Image">
-            <div class="info-box">
-              <p class="song-name">Song Name #4</p>
-              <p class="artist-name">Artist Name #4</p>
-            </div>
-            <div class="album-box">
-              <p class="album-name">Album Name #4</p>
-            </div>
-            <div class="duration-box">
-              <p class="duration">0:00</p>
-            </div>
-            <div class="button-box">
-              <button type="button" class="favorite-button"><i class="fa-solid fa-heart" style="color: red"></i> Favorite</button>
-              <button type="button" class="play-button"><i class="fa-solid fa-play" style="color: green"></i> Play</button>
-              <button type="button" class="playlist-add-button" onClick="redirectToAnotherPage()"><i class="fa-solid fa-circle-plus" style="color: blue"></i> Add to playlist</button>
-            </div>
-          </div>
-
-          <button type="button" id="view-more-button">View More</button>
+        <div id="search-results">
           
         </div>
-          
       </section>
+
+      <section>
+        <button type="button" id="view-more-button">View More</button>
+      </section>
+      
     </main>
 
     <!-- Temporary Script for 'Add to playlist' buttons -->

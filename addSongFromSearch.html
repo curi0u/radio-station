@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/addToPlaylist.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> <!-- Include Font Awesome library -->
+    
+    <script src="js/addSongFromSearch.js"></script>
     <title>FlowNation Radio</title>
   </head>
   
@@ -45,139 +47,13 @@
       
       <!-- Playlist Library -->
       <section>
-        <div class="playlists">
-
-          <div class="playlist-box">
-            <img src="img/temp_person_icon.png" alt="DJ Photo">
-            <div class="info-box">
-              <p class="playlist-name">DJ 1's Playlist</p>
-              <p class="song-count"># Songs</p>
-            </div>
-            <table class="timetable">
-              <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-              </tr>
-              <tr>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-              </tr>
-            </table>
-            <div class="button-box">
-              <button type="button">View playlist</button>
-              <button type="button">Add to this playlist</button>
-            </div>
-          </div>
-
-          <div class="playlist-box">
-            <img src="img/temp_person_icon.png" alt="DJ Photo">
-            <div class="info-box">
-              <p class="playlist-name">DJ 2's Playlist</p>
-              <p class="song-count"># Songs</p>
-            </div>
-            <table class="timetable">
-              <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-              </tr>
-              <tr>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-              </tr>
-            </table>
-            <div class="button-box">
-              <button type="button">View playlist</button>
-              <button type="button">Add to this playlist</button>
-            </div>
-          </div>
-
-          <div class="playlist-box">
-            <img src="img/temp_person_icon.png" alt="DJ Photo">
-            <div class="info-box">
-              <p class="playlist-name">DJ 3's Playlist</p>
-              <p class="song-count"># Songs</p>
-            </div>
-            <table class="timetable">
-              <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-              </tr>
-              <tr>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-              </tr>
-            </table>
-            <div class="button-box">
-              <button type="button">View playlist</button>
-              <button type="button">Add to this playlist</button>
-            </div>
-          </div>
-
-          <div class="playlist-box">
-            <img src="img/temp_person_icon.png" alt="DJ Photo">
-            <div class="info-box">
-              <p class="playlist-name">DJ 4's Playlist</p>
-              <p class="song-count"># Songs</p>
-            </div>
-            <table class="timetable">
-              <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-              </tr>
-              <tr>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-                <td>12AM-12AM</td>
-              </tr>
-            </table>
-            <div class="button-box">
-              <button type="button">View playlist</button>
-              <button type="button">Add to this playlist</button>
-            </div>
-          </div>
-
-          <button type="button" id="view-more-button">View More</button>
+        <div id="playlists">
 
         </div>
+      </section>
+
+      <section>
+        <button type="button" id="view-more-button">View More</button>
       </section>
 
     </main>

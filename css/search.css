@@ -1,7 +1,12 @@
 /* Search Page CSS File */
+body {
+  background-color: burlywood;
+}
+
 #main-content {
   background-color: burlywood;
   flex-direction: column;
+  overflow: auto;
 }
 
 /* Style the search container */
@@ -43,7 +48,7 @@
   color: black; /* Color for the magnifying glass icon */
 }
 
-#song-list {
+#search-results {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -138,11 +143,25 @@
   background-color: rgb(255, 255, 255, 0.7);
 }
 
+#no-results-message {
+  display: none;
+  position: fixed;
+  margin-left: 100px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: black; /* Customize the color as needed */
+}
+
 #view-more-button {
+  display: none;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
   font-weight: bold;
   font-size: 2em;
   padding: 3px 3px;
-  margin-top: 2%;
   border-radius: 25px;
   white-space: normal;
   width: 7em;
