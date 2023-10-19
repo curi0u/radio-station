@@ -1,96 +1,152 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/preferences.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> <!-- Include Font Awesome library -->
-    <link rel="stylesheet" href="css/listener_style.css">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/preferences.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <!-- Include Font Awesome library -->
+  <link rel="stylesheet" href="css/listener_style.css">
 
 
-    <style>
-      .grid-container {
-        display: grid;
-        gap: 10px 50px;
-        grid-template-columns: auto auto auto;
-        padding: 10px;
-      }
-      
-      .grid-item {
-        background-color: rgba(255, 255, 255, 0.8);
-        border: 1px solid rgba(0, 0, 0, 0.8);
-        padding: 20px;
-        font-size: 30px;
-        text-align: center;
-      }
-      </style>
+  <style>
+    .grid-container {
+      display: grid;
+      gap: 10px 50px;
+      grid-template-columns: auto auto auto;
+      padding: 10px;
+    }
 
-    <title>FlowNation Radio</title>
-  </head>
-  
-  <body>
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+    }
+  </style>
 
-    <!-- Navigation Sidebar -->
-    <nav id="sidebar">
-      <h2><a href="#">FlowNation</a></h2>
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="search.html"><i class="fas fa-magnifying-glass"></i>Search</a></li>
-            <li><a href="playlists.html"><i class="fas fa-music"></i>Playlists</a></li>
-            <li><a href="#"><i class="fas fa-gear"></i>Preferences</a></li>
-        </ul> 
-      <div id="social-media">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </nav>
+  <script src="/userPreferences.js"> </script>
 
-    <!-- Content Area: place your user profile stuff into here-->
-    <main id="main-content">          
-              <p style="font-size: 20px;">What's your favorite genre(s) of music?</p> 
+  <title>FlowNation Radio</title>
+</head>
 
-              <div class="grid-container">
-              <input type="button" class="button" value="Pop">
-              <input type="button" class="button" value="Electronic">
-              <input type="button" class="button" value="Heavy Metal">
-              <input type="button" class="button" value="Hip Hop">
-              <input type="button" class="button" value="Popular">
-              <input type="button" class="button" value="Jazz">
-              <input type="button" class="button" value="Rock">
-              <input type="button" class="button" value="Country">
-              <input type="button" class="button" value="Classical">
-              <input type="button" class="button" value="Blues">
-              <input type="button" class="button" value="Folk">
-              <input type="button" class="button" value="Soul">
-              <input type="button" class="button" value="Vocal">
-              <input type="button" class="button" value="Instrumental">
-              <input type="button" class="button" value="Opera">
-              <input type="button" class="button" value="Soundtrack">
-            </div>
+<body>
 
-            <p style="font-size: 20px;">Who are your favorite DJ artists?</p> 
+  <!-- Navigation Sidebar -->
+  <nav id="sidebar">
+    <h2><a href="#">FlowNation</a></h2>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+      <li><a href="search.html"><i class="fas fa-magnifying-glass"></i>Search</a></li>
+      <li><a href="playlists.html"><i class="fas fa-music"></i>Playlists</a></li>
+      <li><a href="#"><i class="fas fa-gear"></i>Preferences</a></li>
+    </ul>
+    <div id="social-media">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </nav>
 
-              <div class="grid-container">
-              <input type="button" class="button" value="Martin Garrix">
-              <input type="button" class="button" value="Marshmello">
-              <input type="button" class="button" value="Alan Walker">
-              <input type="button" class="button" value="Alesso">
-              <input type="button" class="button" value="The Chainsmokers">
-              <input type="button" class="button" value="Carl Cox">
-              <input type="button" class="button" value="Skrillex">
-              <input type="button" class="button" value="Oliver Heldens">
-              <input type="button" class="button" value="Zedd">
-              <input type="button" class="button" value="R3HAB">
-              <input type="button" class="button" value="DJ Snake">
-              <input type="button" class="button" value="Calvin Harris">
-            </div>
-            
-            <div class = "row5">
-              <input type="button" class="button" value="Next">
-            </div>
-    
+  <!-- Content Area: place your user profile stuff into here-->
+  <main id="main-content">
+    <p style="font-size: 20px;">What's your favorite genre(s) of music?</p>
 
-    </main>
-  </body>
+    <div class="grid-container">
+
+      <button id="genreBtn0" type="button" class="button" value="Pop" onclick="genreFunc(this)">Pop</button>
+      <button id="genreBtn1" type="button" class="button" value="Electronic"
+        onclick="genreFunc(this)">Electronic</button>
+      <button id="genreBtn2" type="button" class="button" value="Heavy Metal" onclick="genreFunc(this)">Heavy
+        Metal</button>
+      <button id="genreBtn3" type="button" class="button" value="Hip Hop" onclick="genreFunc(this)">Hip Hop</button>
+      <button id="genreBtn4" type="button" class="button" value="Popular" onclick="genreFunc(this)">Popular</button>
+      <button id="genreBtn5" type="button" class="button" value="Jazz" onclick="genreFunc(this)">Jazz</button>
+      <button id="genreBtn6" type="button" class="button" value="Rock" onclick="genreFunc(this)">Rock</button>
+      <button id="genreBtn7" type="button" class="button" value="Classical" onclick="genreFunc(this)">Classical</button>
+      <button id="genreBtn8" type="button" class="button" value="Blues" onclick="genreFunc(this)">Blues</button>
+      <button id="genreBtn9" type="button" class="button" value="Folk" onclick="genreFunc(this)">Folk</button>
+      <button id="genreBtn10" type="button" class="button" value="Soul" onclick="genreFunc(this)">Soul</button>
+      <button id="genreBtn11" type="button" class="button" value="Vocal" onclick="genreFunc(this)">Vocal</button>
+      <button id="genreBtn12" type="button" class="button" value="Instrumental"
+        onclick="genreFunc(this)">Instrumental</button>
+      <button id="genreBtn13" type="button" class="button" value="Opera" onclick="genreFunc(this)">Opera</button>
+      <button id="genreBtn14" type="button" class="button" value="Soundtrack"
+        onclick="genreFunc(this)">Soundtrack</button>
+    </div>
+
+    <p style="font-size: 20px;">Who are your favorite DJ artists?</p>
+
+    <div class="grid-container">
+
+      <button id="artistFunc0" type="button" class="button" value="Martin Garrix" onclick="artistFunc(this)">Martin
+        Garrix</button>
+      <button id="artistFunc1" type="button" class="button" value="Marshmello"
+        onclick="artistFunc(this)">Marshmello</button>
+      <button id="artistFunc2" type="button" class="button" value="Alan Walker" onclick="artistFunc(this)">Alan
+        Walker</button>
+      <button id="artistFunc3" type="button" class="button" value="Alesso" onclick="artistFunc(this)">Alesso</button>
+      <button id="artistFunc4" type="button" class="button" value="The Chainsmokers" onclick="artistFunc(this)">The
+        Chainsmokers</button>
+      <button id="artistFunc5" type="button" class="button" value="Carl Cox" onclick="artistFunc(this)">Carl
+        Cox</button>
+      <button id="artistFunc6" type="button" class="button" value="Skrillex"
+        onclick="artistFunc(this)">Skrillex</button>
+      <button id="artistFunc7" type="button" class="button" value="Oliver Heldens" onclick="artistFunc(this)">Oliver
+        Heldens</button>
+      <button id="artistFunc8" type="button" class="button" value="Zedd" onclick="artistFunc(this)">Zedd</button>
+      <button id="artistFunc9" type="button" class="button" value="R3HAB" onclick="artistFunc(this)">R3HAB</button>
+      <button id="artistFunc10" type="button" class="button" value="DJ Snake" onclick="artistFunc(this)">DJ
+        Snake</button>
+      <button id="artistFunc11" type="button" class="button" value="Calvin Harris" onclick="artistFunc(this)">Calvin
+        Harris</button>
+    </div>
+
+    <div class="row5">
+
+      <button id="nextBtn" class="button">Next</button>
+
+      <script>
+        document.getElementById("nextBtn").addEventListener("click", nextFunction);
+
+        let userPreferences =
+        {
+          favGenres: "",
+          favArtists: "",
+        };
+
+        function genreFunc(genre) {
+          var btnVal = genre.innerText;
+          alert(btnVal + ' Button has been clicked');
+          userPreferences.favGenres = userPreferences.favGenres + genre.innerText + " ";
+          console.log(btnVal);
+        }
+
+        function artistFunc(artist) {
+          var btnVal2 = artist.innerText;
+          alert(btnVal2 + ' Button has been clicked');
+          userPreferences.favArtists = userPreferences.favArtists + artist.innerText + " ";
+          console.log(btnVal2);
+        }
+
+      </script>
+    </div>
+
+    <p style="font-size: 20px;">Don't see a genre or DJ artist listed above? You can send us your suggestions below.</p>
+
+    <form name="genreForm" onsubmit="return genreSuggestionForm()">
+      Genre: <input type="text" name="genre" required>
+      <input type="submit" class="button" value="Submit">
+    </form>
+
+    <form name="artistForm" onsubmit="return artistSuggestionForm()">
+      DJ Artist: <input type="text" name="artist" required>
+      <input type="submit" class="button" value="Submit">
+    </form>
+
+  </main>
+</body>
+
 </html>
