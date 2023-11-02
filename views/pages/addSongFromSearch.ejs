@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+
+    <link rel="stylesheet" href="/addToPlaylist.css">
+    <script src="/addSongFromSearch.js"></script>
+    <title>FlowNation Radio</title>
+  </head>
+  
+  <body>
+
+    <%- include('../partials/navbar'); %>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+
+      <!-- Page Header with back button and display of selected song -->
+      <header>
+        <a id="back" href="/search"><i class="fas fa-arrow-left"></i>Back to search results</a>
+        <div id="current-song">
+            <label>Selected Song:</label>
+            <img src="<%= imageURL %>"/>
+            <div id="song-info">
+                <a id="song" href="#"><%= songName %></a>
+                <a id="artist" href="#"><%= songArtist %></a>
+            </div>
+        </div>
+      </header>
+      
+      <!-- Playlist Library -->
+      <section>
+        <div id="playlists">
+
+        </div>
+      </section>
+
+      <section>
+        <button type="button" id="view-more-button">View More</button>
+      </section>
+
+    </main>
+    
+  </body>
+</html>

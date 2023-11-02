@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function createResultHTML(result, index) {
     return `
       <div class="playlist-box">
-        <img src="img/temp_person_icon.png" alt="DJ Photo">
+        <img src="/temp_person_icon.png" alt="DJ Photo">
         <div class="info-box">
           <p class="playlist-name">${result.name}</p>
           <p class="song-count"># Songs</p>
