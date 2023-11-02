@@ -2,11 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%- include('../partials/head'); %>
   <link rel="stylesheet" href="css/preferences.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-  <!-- Include Font Awesome library -->
   <link rel="stylesheet" href="css/listener_style.css">
 
   <style>
@@ -33,21 +31,7 @@
 
 <body>
 
-  <!-- Navigation Sidebar -->
-  <nav id="sidebar">
-    <h2><a href="#">FlowNation</a></h2>
-    <ul>
-      <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-      <li><a href="search.html"><i class="fas fa-magnifying-glass"></i>Search</a></li>
-      <li><a href="playlists.html"><i class="fas fa-music"></i>Playlists</a></li>
-      <li><a href="#"><i class="fas fa-gear"></i>Preferences</a></li>
-    </ul>
-    <div id="social-media">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </nav>
+  <%- include('../partials/navbar'); %>
 
   <!-- Content Area: place your user profile stuff into here-->
   <main id="main-content">
