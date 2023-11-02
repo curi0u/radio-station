@@ -3,7 +3,8 @@
 <html lang="en">
   <head>
     <%- include('../partials/head'); %>
-	<link rel="stylesheet" href="/playlists.css">
+	  <link rel="stylesheet" href="/playlists.css">
+    <script src="/playlists.js"></script>
     <title>FlowNation Radio</title>
   </head>
   
@@ -14,7 +15,6 @@
     <main id="main-content">
       <!-- Header Topbar -->
       <header>
-        <a id="back" href="#"><i class="fas fa-arrow-left"></i>Back to Playlists</a>
         <div id="current-song">
             <label>Selected Song:</label>
             <img src="/temp_music_icon.png"/>
@@ -28,114 +28,21 @@
       <!-- Content Area: place your user profile stuff into here-->
       <div id="content">  
         <div id="playlists">
-          <div class="playlist" style="background-color: #352e53">
-            <img src="/temp_person_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
-            <div class="info-box">
-              <p class="dj-name">DJ #1 Name</p>
-              <p class="timeslots">DJ #1 Timeslots</p>
+          <% playlists.forEach(function(playlist) { %>
+            <div class="playlist">
+              <input type="hidden" class="playlist-id" value="<%= playlist.id %>">
+              <img src="/temp_person_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
+              <div class="info-box">
+                <p class="dj-name"><%= playlist.name %></p>
+                <p class="timeslots">DJ Timeslots</p>
+              </div>
+              <p class="duration">Length: <%= playlist.getDuration() %></p>
+              <div class="button-box">
+                <button type="button" class="view-button"><i class="fa-solid fa-binoculars"></i> View Playlist</button>
+                <button type="button" class="edit-button"><i class="fa-solid fa-pencil"></i> Edit Playlist</button>
+              </div>
             </div>
-            <p class="duration">Length: 0:00</p>
-            <div class="button-box">
-              <button type="button" class="view-button"><i class="fa-solid fa-binoculars"></i> View Playlist</button>
-              <button type="button" class="edit-button"><i class="fa-solid fa-pencil"></i> Edit Playlist</button>
-            </div>
-          </div>
-          <div class="playlist">
-            <img src="/temp_person_icon.png" alt="DJ Image">
-            <div class="info-box">
-              <p class="dj-name">DJ #2 Name</p>
-              <p class="timeslots">DJ #2 Timeslots</p>
-            </div>
-            <p class="duration">Length: 0:00</p>
-            <div class="button-box">
-              <button type="button" class="view-button"><i class="fa-solid fa-binoculars"></i> View Playlist</button>
-              <button type="button" class="edit-button"><i class="fa-solid fa-pencil"></i> Edit Playlist</button>
-            </div>
-          </div>
-          <div class="playlist">
-            <img src="/temp_person_icon.png" alt="DJ Image">
-            <div class="info-box">
-              <p class="dj-name">DJ #3 Name</p>
-              <p class="timeslots">DJ #3 Timeslots</p>
-            </div>
-            <p class="duration">Length: 0:00</p>
-            <div class="button-box">
-              <button type="button" class="view-button"><i class="fa-solid fa-binoculars"></i> View Playlist</button>
-              <button type="button" class="edit-button"><i class="fa-solid fa-pencil"></i> Edit Playlist</button>
-            </div>
-          </div>
-          <div class="playlist">
-            <img src="/temp_person_icon.png" alt="DJ Image">
-            <div class="info-box">
-              <p class="dj-name">DJ #4 Name</p>
-              <p class="timeslots">DJ #4 Timeslots</p>
-            </div>
-            <p class="duration">Length: 0:00</p>
-            <div class="button-box">
-              <button type="button" class="view-button"><i class="fa-solid fa-binoculars"></i> View Playlist</button>
-              <button type="button" class="edit-button"><i class="fa-solid fa-pencil"></i> Edit Playlist</button>
-            </div>
-          </div>
-          <div class="playlist">
-            <img src="/temp_person_icon.png" alt="DJ Image">
-            <div class="info-box">
-              <p class="dj-name">DJ #5 Name</p>
-              <p class="timeslots">DJ #5 Timeslots</p>
-            </div>
-            <p class="duration">Length: 0:00</p>
-            <div class="button-box">
-              <button type="button" class="view-button"><i class="fa-solid fa-binoculars"></i> View Playlist</button>
-              <button type="button" class="edit-button"><i class="fa-solid fa-pencil"></i> Edit Playlist</button>
-            </div>
-          </div>
-          <div class="playlist">
-            <img src="/temp_person_icon.png" alt="DJ Image">
-            <div class="info-box">
-              <p class="dj-name">DJ #6 Name</p>
-              <p class="timeslots">DJ #6 Timeslots</p>
-            </div>
-            <p class="duration">Length: 0:00</p>
-            <div class="button-box">
-              <button type="button" class="view-button"><i class="fa-solid fa-binoculars"></i> View Playlist</button>
-              <button type="button" class="edit-button"><i class="fa-solid fa-pencil"></i> Edit Playlist</button>
-            </div>
-          </div>
-          <div class="playlist">
-            <img src="/temp_person_icon.png" alt="DJ Image">
-            <div class="info-box">
-              <p class="dj-name">DJ #7 Name</p>
-              <p class="timeslots">DJ #7 Timeslots</p>
-            </div>
-            <p class="duration">Length: 0:00</p>
-            <div class="button-box">
-              <button type="button" class="view-button"><i class="fa-solid fa-binoculars"></i> View Playlist</button>
-              <button type="button" class="edit-button"><i class="fa-solid fa-pencil"></i> Edit Playlist</button>
-            </div>
-          </div>
-          <div class="playlist">
-            <img src="/temp_person_icon.png" alt="DJ Image">
-            <div class="info-box">
-              <p class="dj-name">DJ #8 Name</p>
-              <p class="timeslots">DJ #8 Timeslots</p>
-            </div>
-            <p class="duration">Length: 0:00</p>
-            <div class="button-box">
-              <button type="button" class="view-button"><i class="fa-solid fa-binoculars"></i> View Playlist</button>
-              <button type="button" class="edit-button"><i class="fa-solid fa-pencil"></i> Edit Playlist</button>
-            </div>
-          </div>
-          <div class="playlist">
-            <img src="/temp_person_icon.png" alt="DJ Image">
-            <div class="info-box">
-              <p class="dj-name">DJ #9 Name</p>
-              <p class="timeslots">DJ #9 Timeslots</p>
-            </div>
-            <p class="duration">Length: 0:00</p>
-            <div class="button-box">
-              <button type="button" class="view-button"><i class="fa-solid fa-binoculars"></i> View Playlist</button>
-              <button type="button" class="edit-button"><i class="fa-solid fa-pencil"></i> Edit Playlist</button>
-            </div>
-          </div>
+          <% }); %>
         </div>
         <div id="playlist-info">
           <div id="playlist-dj">
@@ -153,49 +60,10 @@
             <label><input type="checkbox" name="playlist-sunday"> Sunday</label>
           </div>
           <div id="playlist-songs">
-            <div class="playlist-song">
-              <img src="/temp_music_icon.png" alt="DJ Image">
-              <div class="info-box">
-                <p class="song-name">Song #1</p>
-                <p class="artist-name">Artist #1</p>
-              </div>
-              <p class="duration">Length: 0:00</p>
-            </div>
-            <div class="playlist-song">
-              <img src="/temp_music_icon.png" alt="DJ Image">
-              <div class="info-box">
-                <p class="song-name">Song #2</p>
-                <p class="artist-name">Artist #1</p>
-              </div>
-              <p class="duration">Length: 0:00</p>
-            </div>
-            <div class="playlist-song">
-              <img src="/temp_music_icon.png" alt="DJ Image">
-              <div class="info-box">
-                <p class="song-name">Song #3</p>
-                <p class="artist-name">Artist #2</p>
-              </div>
-              <p class="duration">Length: 0:00</p>
-            </div>
-            <div class="playlist-song">
-              <img src="/temp_music_icon.png" alt="DJ Image">
-              <div class="info-box">
-                <p class="song-name">Song #4</p>
-                <p class="artist-name">Artist #3</p>
-              </div>
-              <p class="duration">Length: 0:00</p>
-            </div>
-            <div class="playlist-song">
-              <img src="/temp_music_icon.png" alt="DJ Image">
-              <div class="info-box">
-                <p class="song-name">Song #5</p>
-                <p class="artist-name">Artist #4</p>
-              </div>
-              <p class="duration">Length: 0:00</p>
-            </div>
           </div>
         </div>
       </div>
     </main>
+    <input id="json-data" type="hidden" value="<%= JSON.stringify(playlists); %>">
   </body>
 </html>
