@@ -2,32 +2,15 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/playlist.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> <!-- Include Font Awesome library -->
-    <script src="js/playlist.js"></script>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/playlist.css">
+    <script src="/playlist.js"></script>
     <title>FlowNation Radio</title>
   </head>
   
   <body>
-
     <!-- Navigation Sidebar -->
-    <nav id="sidebar">
-      <h2><a href="#">FlowNation</a></h2>
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="search.html"><i class="fas fa-magnifying-glass"></i>Search</a></li>
-            <li><a href="playlists.html"><i class="fas fa-music"></i>Playlists</a></li>
-            <li><a href="#"><i class="fas fa-gear"></i>Preferences</a></li>
-        </ul> 
-      <div id="social-media">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </nav>
+    <%- include('../partials/navbar'); %>
     
     <main id="main-content">
       <!-- Header Topbar -->
@@ -35,7 +18,7 @@
         <a id="back" href="#"><i class="fas fa-arrow-left"></i>Back to Playlists</a>
         <div id="current-song">
             <label>Selected Song:</label>
-            <img src="img/temp_music_icon.png"/>
+            <img src="/temp_music_icon.png"/>
             <div id="song-info">
                 <a id="song" href="#">Song Name</a>
                 <a id="artist" href="#">Artist Name</a>
@@ -46,12 +29,12 @@
       <!-- Content Area: place your user profile stuff into here-->
       <div id="content"> 
         <div id="playlist-dj">
-            <p class="image-holder"><img src="img/temp_person_icon.png" alt="DJ Image"></p>
+            <p class="image-holder"><img src="/temp_person_icon.png" alt="DJ Image"></p>
             <p>DJ #1's Playlist</p>
         </div>
         <div id="playlist-songs">
           <div class="playlist-song" style="background-color: #352e53">
-            <img src="img/temp_music_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
+            <img src="/temp_music_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
             <div class="info">
                 <div class="info-box">
                     <p class="song-name">Song #1 Name</p>
@@ -65,7 +48,7 @@
             </div>
           </div>
           <div class="playlist-song" style="background-color: #352e53">
-            <img src="img/temp_music_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
+            <img src="/temp_music_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
             <div class="info">
                 <div class="info-box">
                     <p class="song-name">Song #2 Name</p>
@@ -79,7 +62,7 @@
             </div>
           </div>
           <div class="playlist-song" style="background-color: #352e53">
-            <img src="img/temp_music_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
+            <img src="/temp_music_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
             <div class="info">
                 <div class="info-box">
                     <p class="song-name">Song #3 Name</p>
@@ -93,7 +76,7 @@
             </div>
           </div>
           <div class="playlist-song" style="background-color: #352e53">
-            <img src="img/temp_music_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
+            <img src="/temp_music_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
             <div class="info">
                 <div class="info-box">
                     <p class="song-name">Song #4 Name</p>
@@ -107,7 +90,7 @@
             </div>
           </div>
           <div class="playlist-song" style="background-color: #352e53">
-            <img src="img/temp_music_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
+            <img src="/temp_music_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
             <div class="info">
                 <div class="info-box">
                     <p class="song-name">Song #5 Name</p>
