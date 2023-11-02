@@ -11,7 +11,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchResultsContainer = document.getElementById('search-results');
     const viewMoreButton = document.getElementById('view-more-button');
     const noResultsMessage = document.getElementById('no-results-message');
-  
+
+    // Function to redirect to another page with query parameters
+    function redirectToAnotherPage(imageURL, songName, songArtist) {
+      const url = `/addSongFromSearch?imageURL=${encodeURIComponent(imageURL)}&songName=${encodeURIComponent(songName)}&songArtist=${encodeURIComponent(songArtist)}`;
+      window.location.href = url;
+    }
+
     // Function to generate dummy data with varying numbers
     function generateDummyData(count) {
       const dummyData = [];
@@ -59,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return `
         <div class="song-box">
           <!-- Customize this part based on your data structure -->
-          <img src="img/temp_music_icon.png" alt="Song Image">
+          <img src="/temp_music_icon.png" alt="Song Image">
           <div class="info-box">
             <p class="song-name">${result.name}</p>
             <p class="artist-name">${result.artist}</p>
@@ -73,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="button-box">
             <button type="button" class="favorite-button"><i class="fa-solid fa-heart" style="color: red"></i> Favorite</button>
             <button type="button" class="play-button"><i class="fa-solid fa-play" style="color: green"></i> Play</button>
-            <button type="button" class="playlist-add-button" onClick="redirectToAnotherPage()"><i class="fa-solid fa-circle-plus" style="color: blue"></i> Add to playlist</button>
+            <button type="button" class="playlist-add-button"><i class="fa-solid fa-circle-plus" style="color: blue"></i> Add to playlist</button>
           </div>
         </div>
       `;
@@ -92,6 +98,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
         // Display the initially specified number of filtered results
         displayResults(filteredResults, displayedResultsCount);
+      } else {
+        displayResults([], 0);
       }
     });
   
@@ -129,6 +137,23 @@ document.addEventListener('DOMContentLoaded', function () {
         
         // Show an alert saying that the corresponding song is now playing
         alert(`Now playing ${songName}`)
+      }
+    });
+
+    // Event listener for the "Add to playlist" button
+    searchResultsContainer.addEventListener('click', function (event) {
+      // Check if the "Add to playlist" button was clicked
+      if (event.target.classList.contains('playlist-add-button')) {
+        // Find the corresponding song info
+        const songBox = event.target.closest('.song-box');
+        const songName = songBox.querySelector('.song-name').textContent;
+        const artistName = songBox.querySelector('.artist-name').textContent;
+        const albumName = songBox.querySelector('.album-name').textContent;
+        const duration = songBox.querySelector('.duration').textContent;
+        const imageURL = songBox.querySelector('img').src;
+
+        // Redirect to the addSongFromSearch page with query parameters
+        redirectToAnotherPage(imageURL, songName, artistName);
       }
     });
 });

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+
+    <link rel="stylesheet" href="/search.css">
+    <script src="/search.js"></script>
+    <title>Search</title>
+    
+  </head>
+  
+  <body>
+
+    <%- include('../partials/navbar'); %>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+
+      <!-- Search Bar -->
+      <section>
+        <div id="search-container">
+          <div id="search-bar">
+            <input type="text" id="search-bar-input" placeholder="Search for songs...">
+            <button id="search-button"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </section>
+    
+      <div id="no-results-message">No results found</div>
+      
+      <!-- Search Results -->
+      <section>
+        <div id="search-results">
+          
+        </div>
+      </section>
+
+      <section>
+        <button type="button" id="view-more-button">View More</button>
+      </section>
+      
+    </main>
+    
+  </body>
+</html>

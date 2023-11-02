@@ -16,12 +16,28 @@ app.get('/', function(req, res) {
   res.render('pages/index');
 });
 
-
 function randInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+// search page
+app.get('/search', function(req, res) {
+  res.render('pages/search');
+});
+
+// addSongFromSearch page
+app.get('/addSongFromSearch', function(req, res) {
+  const imageURL = req.query.imageURL;
+  const songName = req.query.songName;
+  const songArtist = req.query.songArtist;
+
+  res.render('pages/addSongFromSearch', {
+    imageURL: imageURL,
+    songName: songName,
+    songArtist: songArtist
+  });
+});
 
 class Song {
   constructor(artist, title, duration) {
