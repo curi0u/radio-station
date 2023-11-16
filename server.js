@@ -36,14 +36,14 @@ app.get('/search', function(req, res) {
   if (req.query.query != "") {
     var matches = Song.find({title: req.query.query});
 
+    // name: `Song Name #${i}`,
+    // artist: `Artist Name #${i}`,
+    // album: `Album Name #${i}`,
+    // duration: '0:00'
+
     var ret = [];
     matches.forEach()
   }
-
-  // name: `Song Name #${i}`,
-  // artist: `Artist Name #${i}`,
-  // album: `Album Name #${i}`,
-  // duration: '0:00'
 
   res.render('pages/search');
 });
@@ -82,29 +82,12 @@ app.get('/playlist/:id', async function(req, res) {
   }
 });
 
-// TODO
 app.post('/playlist/:id/deleteSong', async function(req, res) {
   if (req.body) {
     await Playlist.findOneAndUpdate({id: req.params.id}, { "$pull": { "songs": { "name": req.body.name } } }, { safe: true, multi: false })
     res.json({success: true});
   }
 });
-
-// // TODO:
-// app.get('/playlist/:id/songs', async function(req, res) {
-//   var playlist = await Playlist.find({id: req.params.id});
-//   if (playlist) {
-//     res.render('pages/playlist', {songs: playlist.songs});
-//   }
-
-//   // var playlistID = req.params.id;
-
-//   // for (const playlist of playlistData) {
-//   //   if (playlist.id == playlistID) {
-//   //     res.json({songs: playlist.songs});
-//   //   }
-//   // }
-// });
 
 app.post('/updatePlaylist', async function(req, res) {
   if (req.body) {
@@ -113,6 +96,7 @@ app.post('/updatePlaylist', async function(req, res) {
   }
 });
 
+// TODO
 app.post('/addToPlaylist', async function(req, res) {
   if (req.body) {
     var playlist = Playlist.findOne({id: req.body.id});
