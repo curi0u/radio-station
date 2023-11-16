@@ -9,6 +9,7 @@ require("./database");
 // connect to mongoDB
 // To drop this database for testing in mongosh, run this:
 // mongosh --eval "use myapp" --eval  "db.dropDatabase()"
+// mongosh --eval "use myapp" --eval  "db.songs.find()"
 mongoose.connect('mongodb://127.0.0.1:27017/myapp');
 const Song = mongoose.model("Song");
 const DJ = mongoose.model("DJ");
@@ -27,14 +28,20 @@ app.get('/', function(req, res) {
   res.render('pages/index');
 });
 
-function randInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 // search page
 app.get('/search', function(req, res) {
+  if (req.query.query != "") {
+    var matches = Song.find({title: req.query.query});
+
+    var ret = [];
+    matches.forEach()
+  }
+
+  // name: `Song Name #${i}`,
+  // artist: `Artist Name #${i}`,
+  // album: `Album Name #${i}`,
+  // duration: '0:00'
+
   res.render('pages/search');
 });
 
@@ -52,7 +59,7 @@ app.get('/addSongFromSearch', function(req, res) {
 });
 
 app.get('/playlists', function(req, res) {
-  res.render('pages/playlists', {playlists: playlistData});
+  res.render('pages/playlists', {playlists: Playlist.find()});
 });
 
 app.get('/playlist/:id', function(req, res) {

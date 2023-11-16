@@ -17,12 +17,11 @@ const djSchema = mongoose.Schema({
 });
 	
 const playlistSchema = new mongoose.Schema({
+	id: Number,
 	songs: [songSchema],
 	dj: djSchema,
 	name: String,
-	numSongs: Number,
 	timeslots: [Boolean],
-	length: Number,
 	imageURL: String
 });
 
