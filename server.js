@@ -4,9 +4,15 @@ require('dotenv').config();
 var express = require('express');
 var app = express();
 const mongoose = require('mongoose');
+require("./database");
 
 // connect to mongoDB
+// To drop this database for testing in mongosh, run this:
+// mongosh --eval "use myapp" --eval  "db.dropDatabase()"
 mongoose.connect('mongodb://127.0.0.1:27017/myapp');
+const Song = mongoose.model("Song");
+const DJ = mongoose.model("DJ");
+const Playlist = mongoose.model("Playlist");
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -15,33 +21,6 @@ app.set('view engine', 'ejs');
 app.use(express.static('static/css'));
 app.use(express.static('static/js'));
 app.use(express.static('static/img'));
-
-
-const songSchema = new mongoose.Schema({
-  spotifyID: String,
-  name: String,
-  artists: [String],
-  album: String,
-  durationMs: Number,
-  imageURL: String,
-  audioURL: String
-});
-
-const djSchema = mongoose.Schema({
-  name: String,
-  numFollowers: Number,
-  imageURL: String
-});
-
-const playlistSchema = new mongoose.Schema({
-  songs: [songSchema],
-  dj: djSchema,
-  name: String,
-  numSongs: Number,
-  timeslots: [Boolean],
-  length: Number,
-  imageURL: String
-});
 
 // index page
 app.get('/', function(req, res) {
@@ -53,6 +32,7 @@ function randInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 // search page
 app.get('/search', function(req, res) {
   res.render('pages/search');
@@ -70,46 +50,6 @@ app.get('/addSongFromSearch', function(req, res) {
     songArtist: songArtist
   });
 });
-
-class Song {
-  constructor(artist, title, duration) {
-    this.artist = artist;
-    this.title = title;
-    this.duration = duration;
-  }
-}
-
-class Playlist {
-  constructor(id, name, dj, songs) {
-    this.id = id
-    this.name = name;
-    this.dj = dj;
-    this.songs = songs;
-  }
-
-  getDuration() {
-    var duration = 0
-    for (const song of this.songs) {
-      duration += song.duration
-    }
-
-    // If duration is larger than 60 seconds we need to format it properly
-    return `${Math.floor(duration / 60)}m${duration % 60}s`
-  }
-}
-
-var playlistData = [];
-var numPlaylists = randInt(5, 20);
-var numSongs = randInt(5, 10);
-
-for (i = 0; i < numPlaylists; i++) {
-  songs = [];
-  for (j = 0; j < numSongs; j++) {
-    songs.push(new Song(`Artist #${j}`, `Song #${(10 * i) + j}`, randInt(100, 300)))
-  }
-
-  playlistData.push(new Playlist(i, `Playlist #${i}`, `DJ #${i}`, songs));
-}
 
 app.get('/playlists', function(req, res) {
   res.render('pages/playlists', {playlists: playlistData});
