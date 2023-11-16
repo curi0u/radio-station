@@ -22,17 +22,25 @@ var baseDuration = document.createElement("p");
 baseDuration.classList.add("duration");
 baseElem.appendChild(baseDuration);
 
+var baseDay = document.createElement("label");
+var baseDayInput = document.createElement("input");
+baseDayInput.type = "checkbox"
+baseDayInput.name = "playlist-day"
+baseDay.appendChild(baseDayInput)
+
 document.addEventListener("DOMContentLoaded", event => {
 	// Hacky method to transfer playlist info to client
-	let jsonElem = document.getElementById("json-data");
+	var jsonElem = document.getElementById("json-data");
 	var jsonObj = JSON.parse(jsonElem.value);
 	document.body.removeChild(jsonElem);
 	
-	let songHolder = document.getElementById("playlist-songs");
+	const days = ["playlist-monday", "playlist-tuesday", "playlist-wednesday", "playlist-thursday", "playlist-friday", "playlist-saturday", "playlist-sunday"];
 
-	let currSelection = null;
+	const songHolder = document.getElementById("playlist-songs");
+	const dayIDs = document.querySelectorAll("#playlist-days input")
+
+	var currSelection = null;
 	function updateSelection(newSelection, jsonData) {
-		console.log(jsonData);
 		if (currSelection == newSelection) {
 			return;
 		}
@@ -48,17 +56,45 @@ document.addEventListener("DOMContentLoaded", event => {
 
 		currSelection = newSelection;
 		console.log("selection has been updated to: " + jsonData.dj);
-		document.querySelector("#playlist-dj a").textContent = jsonData.dj;
+		document.querySelector("#playlist-dj a").textContent = jsonData.dj.name;
 		currSelection.style["background-color"] = "#352e53";
 
 		for (const song of jsonData.songs) {
 			var newSong = baseElem.cloneNode(true);
-			newSong.querySelector(".song-name").textContent = song.title;
-			newSong.querySelector(".artist-name").textContent = song.artist;
+			newSong.querySelector(".song-name").textContent = song.name;
+			newSong.querySelector(".artist-name").textContent = song.artists.join(", ");
 
-			var duration = String(Math.floor(song.duration / 60)).padStart(2, "0") + "m" + String(song.duration % 60).padStart(2, "0") + "s";
-			newSong.querySelector(".duration").textContent = "Length: " + duration;
+			var duration = song.durationMs / 1000
+			var durationStr = String(Math.floor(duration / 60)).padStart(2, "0") + "m" + String(duration % 60).padStart(2, "0") + "s";
+			newSong.querySelector(".duration").textContent = "Length: " + durationStr;
 			songHolder.appendChild(newSong);
+		}
+
+		var playlistID = jsonData.id;
+
+		// Also update days check boxes
+		for (var i = 0; i < dayIDs.length; i++) {
+			dayIDs[i].checked = jsonData.timeslots[i];
+
+			dayIDs[i].onclick = function(event) {
+				const dayID = event.srcElement.id;
+				for (var j = 0; j < days.length; j++) {
+					if (days[j] == dayID) {
+						jsonData.timeslots[j] = event.srcElement.checked;
+					}
+				}
+
+				fetch("updatePlaylist", {
+					method: "POST",
+					body: JSON.stringify({
+						id: playlistID,
+						timeslots: jsonData.timeslots,
+					}),
+					headers: {
+						"Content-type": "application/json; charset=UTF-8"
+					}
+				});
+			}
 		}
 	}
 

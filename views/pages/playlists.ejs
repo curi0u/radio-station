@@ -34,9 +34,9 @@
               <img src="/temp_person_icon.png" alt="DJ Image" style="border: #352e53; border-style: dashed">
               <div class="info-box">
                 <p class="dj-name"><%= playlist.name %></p>
-                <p class="timeslots">DJ Timeslots</p>
+                <p class="timeslots"><%= playlist.dj.name %></p>
               </div>
-              <p class="duration">Length: <%= playlist.getDuration() %></p>
+              <p class="duration">Length: <%= formatDuration(playlist) %></p>
               <div class="button-box">
                 <button type="button" class="view-button"><i class="fa-solid fa-binoculars"></i> View Playlist</button>
                 <button type="button" class="edit-button"><i class="fa-solid fa-pencil"></i> Edit Playlist</button>
@@ -51,13 +51,13 @@
             <p><a href="playlist.html">DJ #1's Playlist</a></p>
           </div>
           <div id="playlist-days">
-            <label><input type="checkbox" name="playlist-monday"> Monday</label>
-            <label><input type="checkbox" name="playlist-tuesday"> Tuesday</label>
-            <label><input type="checkbox" name="playlist-wednesday"> Wednesday</label>
-            <label><input type="checkbox" name="playlist-thursday"> Thursday</label>
-            <label><input type="checkbox" name="playlist-friday"> Friday</label>
-            <label><input type="checkbox" name="playlist-saturday"> Saturday</label>
-            <label><input type="checkbox" name="playlist-sunday"> Sunday</label>
+            <label><input type="checkbox" id="playlist-monday"> Monday</label>
+            <label><input type="checkbox" id="playlist-tuesday"> Tuesday</label>
+            <label><input type="checkbox" id="playlist-wednesday"> Wednesday</label>
+            <label><input type="checkbox" id="playlist-thursday"> Thursday</label>
+            <label><input type="checkbox" id="playlist-friday"> Friday</label>
+            <label><input type="checkbox" id="playlist-saturday"> Saturday</label>
+            <label><input type="checkbox" id="playlist-sunday"> Sunday</label>
           </div>
           <div id="playlist-songs">
           </div>

@@ -23,6 +23,9 @@ app.use(express.static('static/css'));
 app.use(express.static('static/js'));
 app.use(express.static('static/img'));
 
+// Match appropriate JSON requests
+app.use(express.json())
+
 // index page
 app.get('/', function(req, res) {
   res.render('pages/index');
@@ -58,27 +61,66 @@ app.get('/addSongFromSearch', function(req, res) {
   });
 });
 
-app.get('/playlists', function(req, res) {
-  res.render('pages/playlists', {playlists: Playlist.find()});
+function formatDuration(playlist) {
+  var duration = 0
+  playlist.songs.forEach(song => {
+    duration += song.durationMs
+  })
+
+  const seconds = duration / 1000
+  return `${String(Math.floor(seconds / 60)).padStart(2, "0")}m${String(seconds % 60).padStart(2, "0")}s`
+}
+
+app.get('/playlists', async function(req, res) {
+  res.render('pages/playlists', {formatDuration: formatDuration, playlists: await Playlist.find()});
 });
 
-app.get('/playlist/:id', function(req, res) {
-  var playlistID = req.params.id;
-
-  for (const playlist of playlistData) {
-    if (playlist.id == playlistID) {
-      res.render('pages/playlist', {playlist: playlist});
-    }
+app.get('/playlist/:id', async function(req, res) {
+  var playlist = await Playlist.findOne({id: req.params.id});
+  if (playlist) {
+    res.render('pages/playlist', {playlist: playlist});
   }
 });
 
-app.get('/playlist/:id/songs', function(req, res) {
-  var playlistID = req.params.id;
+// TODO
+app.post('/playlist/:id/deleteSong', async function(req, res) {
+  if (req.body) {
+    await Playlist.findOneAndUpdate({id: req.params.id}, { "$pull": { "songs": { "name": req.body.name } } }, { safe: true, multi: false })
+    res.json({success: true});
+  }
+});
 
-  for (const playlist of playlistData) {
-    if (playlist.id == playlistID) {
-      res.json({songs: playlist.songs});
+// // TODO:
+// app.get('/playlist/:id/songs', async function(req, res) {
+//   var playlist = await Playlist.find({id: req.params.id});
+//   if (playlist) {
+//     res.render('pages/playlist', {songs: playlist.songs});
+//   }
+
+//   // var playlistID = req.params.id;
+
+//   // for (const playlist of playlistData) {
+//   //   if (playlist.id == playlistID) {
+//   //     res.json({songs: playlist.songs});
+//   //   }
+//   // }
+// });
+
+app.post('/updatePlaylist', async function(req, res) {
+  if (req.body) {
+    await Playlist.findOneAndUpdate({id: req.body.id}, {timeslots: req.body.timeslots});
+    res.json({success: true});
+  }
+});
+
+app.post('/addToPlaylist', async function(req, res) {
+  if (req.body) {
+    var playlist = Playlist.findOne({id: req.body.id});
+    var song = Song.findOne({name: req.body.name});
+    if (playlist && song) {
+      playlist.songs.push(song);
     }
+    res.json({success: true});
   }
 });
 
