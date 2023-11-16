@@ -1,5 +1,12 @@
+// Needed to access Spotify credentials in an .env file
+require('dotenv').config();
+
 var express = require('express');
 var app = express();
+const mongoose = require('mongoose');
+
+// connect to mongoDB
+mongoose.connect('mongodb://127.0.0.1:27017/myapp');
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -9,7 +16,32 @@ app.use(express.static('static/css'));
 app.use(express.static('static/js'));
 app.use(express.static('static/img'));
 
-// use res.render to load up an ejs view file
+
+const songSchema = new mongoose.Schema({
+  spotifyID: String,
+  name: String,
+  artists: [String],
+  album: String,
+  durationMs: Number,
+  imageURL: String,
+  audioURL: String
+});
+
+const djSchema = mongoose.Schema({
+  name: String,
+  numFollowers: Number,
+  imageURL: String
+});
+
+const playlistSchema = new mongoose.Schema({
+  songs: [songSchema],
+  dj: djSchema,
+  name: String,
+  numSongs: Number,
+  timeslots: [Boolean],
+  length: Number,
+  imageURL: String
+});
 
 // index page
 app.get('/', function(req, res) {
