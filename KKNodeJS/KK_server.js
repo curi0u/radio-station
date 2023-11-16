@@ -1,13 +1,15 @@
 const express = require("express")
-const mongoose = require("mongoose")
+const mongoose = require("mongoose")    //connects to mongoose
 const app = express()
 const port = 8080   //port number
 
-main().catch(err => console.log(err));
+main().catch(err => console.log(err));  //catches any errors when running 
 
+//Creates a connection with the database
 async function main() {
   await mongoose.connect('mongodb://localhost:27017/Iteration5');
 
+  //Schema used to record DJ and Genre values
   const DJSchema = new mongoose.Schema({
     DJ: String
   });
@@ -16,6 +18,7 @@ async function main() {
     Genre: String
   });
   
+  //Data Population
   const DJ_Entry = mongoose.model('DJ_Entry', DJSchema);
   const Genre_Entry = mongoose.model('Genre_Entry', GenreSchema);
 
