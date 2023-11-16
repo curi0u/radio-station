@@ -4,7 +4,13 @@
     <%- include('../partials/head'); %>
 
     <link rel="stylesheet" href="/search.css">
-    <script src="/search.js"></script>
+    <script>
+      window.env = {
+        SPOTIFY_CLIENT_ID: '<%= process.env.SPOTIFY_CLIENT_ID %>',
+        SPOTIFY_CLIENT_SECRET: '<%= process.env.SPOTIFY_CLIENT_SECRET %>'
+      };
+    </script>
+    <script type="module" src="/search.js"></script>
     <title>Search</title>
     
   </head>

@@ -4,7 +4,16 @@
     <%- include('../partials/head'); %>
 
     <link rel="stylesheet" href="/addToPlaylist.css">
-    <script src="/addSongFromSearch.js"></script>
+    <script>
+      window.env = {
+        SPOTIFY_CLIENT_ID: '<%= process.env.SPOTIFY_CLIENT_ID %>',
+        SPOTIFY_CLIENT_SECRET: '<%= process.env.SPOTIFY_CLIENT_SECRET %>'
+      };
+
+      // Store trackID in the global scope for access in addSongFromSearch.js
+      window.trackID = '<%= trackID %>';
+    </script>
+    <script type="module" src="/addSongFromSearch.js"></script>
     <title>FlowNation Radio</title>
   </head>
   
@@ -20,7 +29,7 @@
         <a id="back" href="/search"><i class="fas fa-arrow-left"></i>Back to search results</a>
         <div id="current-song">
             <label>Selected Song:</label>
-            <img src="<%= imageURL %>"/>
+            <img src="<%= imageURL %>" alt="DJ Photo"/>
             <div id="song-info">
                 <a id="song" href="#"><%= songName %></a>
                 <a id="artist" href="#"><%= songArtist %></a>
@@ -33,10 +42,6 @@
         <div id="playlists">
 
         </div>
-      </section>
-
-      <section>
-        <button type="button" id="view-more-button">View More</button>
       </section>
 
     </main>

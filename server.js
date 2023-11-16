@@ -33,28 +33,18 @@ app.get('/', function(req, res) {
 
 // search page
 app.get('/search', function(req, res) {
-  if (req.query.query != "") {
-    var matches = Song.find({title: req.query.query});
-
-    // name: `Song Name #${i}`,
-    // artist: `Artist Name #${i}`,
-    // album: `Album Name #${i}`,
-    // duration: '0:00'
-
-    var ret = [];
-    matches.forEach()
-  }
-
   res.render('pages/search');
 });
 
 // addSongFromSearch page
 app.get('/addSongFromSearch', function(req, res) {
+  const trackID = req.query.trackID;
   const imageURL = req.query.imageURL;
   const songName = req.query.songName;
   const songArtist = req.query.songArtist;
 
   res.render('pages/addSongFromSearch', {
+    trackID: trackID,
     imageURL: imageURL,
     songName: songName,
     songArtist: songArtist
@@ -105,6 +95,42 @@ app.post('/addToPlaylist', async function(req, res) {
       playlist.songs.push(song);
     }
     res.json({success: true});
+  }
+});
+
+app.get('/api/getPlaylists', async function(req, res) {
+  try {
+    const playlists = await Playlist.find();
+    res.json({ playlists });
+  } catch (error) {
+    console.error('Error fetching playlists:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.post('/api/addSongFromSearch', async function (req, res) {
+  try {
+    const { playlistName, songInfo } = req.body;
+
+    // Find the playlist in the database
+    const playlist = await Playlist.findOne({ name: playlistName });
+
+    // Update the playlist with the new song
+    const song = new Song ({
+      spotifyID: songInfo.id,
+      name: songInfo.name,
+      artists: songInfo.artists,
+      album: songInfo.album,
+      durationMs: songInfo.duration,
+      imageURL: songInfo.imageURL
+    })
+    playlist.songs.push(song);
+    await playlist.save();
+
+    res.status(200).json({ message: 'Song added to playlist successfully' });
+  } catch (error) {
+    console.error('Error adding song to playlist:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
