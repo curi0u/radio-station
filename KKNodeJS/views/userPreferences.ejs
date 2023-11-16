@@ -26,7 +26,7 @@
     }
   </style>
 
-  <script src="/userPreferences.js"> </script>
+  <script src="js/userPreferences.js"> </script>
 
   <title>FlowNation Radio</title>
 </head>
@@ -55,11 +55,10 @@
 
     <div class="grid-container">
 
+
       <button id="genreBtn0" type="button" class="button" value="Pop" onclick="genreFunc(this)">Pop</button>
-      <button id="genreBtn1" type="button" class="button" value="Electronic"
-        onclick="genreFunc(this)">Electronic</button>
-      <button id="genreBtn2" type="button" class="button" value="Heavy Metal" onclick="genreFunc(this)">Heavy
-        Metal</button>
+      <button id="genreBtn1" type="button" class="button" value="Electronic" onclick="genreFunc(this)">Electronic</button>
+      <button id="genreBtn2" type="button" class="button" value="Heavy Metal" onclick="genreFunc(this)">Heavy Metal</button>
       <button id="genreBtn3" type="button" class="button" value="Hip Hop" onclick="genreFunc(this)">Hip Hop</button>
       <button id="genreBtn4" type="button" class="button" value="Popular" onclick="genreFunc(this)">Popular</button>
       <button id="genreBtn5" type="button" class="button" value="Jazz" onclick="genreFunc(this)">Jazz</button>
@@ -69,68 +68,33 @@
       <button id="genreBtn9" type="button" class="button" value="Folk" onclick="genreFunc(this)">Folk</button>
       <button id="genreBtn10" type="button" class="button" value="Soul" onclick="genreFunc(this)">Soul</button>
       <button id="genreBtn11" type="button" class="button" value="Vocal" onclick="genreFunc(this)">Vocal</button>
-      <button id="genreBtn12" type="button" class="button" value="Instrumental"
-        onclick="genreFunc(this)">Instrumental</button>
+      <button id="genreBtn12" type="button" class="button" value="Instrumental" onclick="genreFunc(this)">Instrumental</button>
       <button id="genreBtn13" type="button" class="button" value="Opera" onclick="genreFunc(this)">Opera</button>
-      <button id="genreBtn14" type="button" class="button" value="Soundtrack"
-        onclick="genreFunc(this)">Soundtrack</button>
+      <button id="genreBtn14" type="button" class="button" value="Soundtrack" onclick="genreFunc(this)">Soundtrack</button>
     </div>
 
     <p style="font-size: 20px;">Who are your favorite DJ artists?</p>
 
     <div class="grid-container">
 
-      <button id="artistFunc0" type="button" class="button" value="Martin Garrix" onclick="artistFunc(this)">Martin
-        Garrix</button>
-      <button id="artistFunc1" type="button" class="button" value="Marshmello"
-        onclick="artistFunc(this)">Marshmello</button>
-      <button id="artistFunc2" type="button" class="button" value="Alan Walker" onclick="artistFunc(this)">Alan
-        Walker</button>
+      <button id="artistFunc0" type="button" class="button" value="Martin Garrix" onclick="artistFunc(this)">Martin Garrix</button>
+      <button id="artistFunc1" type="button" class="button" value="Marshmello" onclick="artistFunc(this)">Marshmello</button>
+      <button id="artistFunc2" type="button" class="button" value="Alan Walker" onclick="artistFunc(this)">Alan Walker</button>
       <button id="artistFunc3" type="button" class="button" value="Alesso" onclick="artistFunc(this)">Alesso</button>
-      <button id="artistFunc4" type="button" class="button" value="The Chainsmokers" onclick="artistFunc(this)">The
-        Chainsmokers</button>
-      <button id="artistFunc5" type="button" class="button" value="Carl Cox" onclick="artistFunc(this)">Carl
-        Cox</button>
-      <button id="artistFunc6" type="button" class="button" value="Skrillex"
-        onclick="artistFunc(this)">Skrillex</button>
-      <button id="artistFunc7" type="button" class="button" value="Oliver Heldens" onclick="artistFunc(this)">Oliver
-        Heldens</button>
+      <button id="artistFunc4" type="button" class="button" value="The Chainsmokers" onclick="artistFunc(this)">The Chainsmokers</button>
+      <button id="artistFunc5" type="button" class="button" value="Carl Cox" onclick="artistFunc(this)">Carl Cox</button>
+      <button id="artistFunc6" type="button" class="button" value="Skrillex" onclick="artistFunc(this)">Skrillex</button>
+      <button id="artistFunc7" type="button" class="button" value="Oliver Heldens" onclick="artistFunc(this)">Oliver Heldens</button>
       <button id="artistFunc8" type="button" class="button" value="Zedd" onclick="artistFunc(this)">Zedd</button>
       <button id="artistFunc9" type="button" class="button" value="R3HAB" onclick="artistFunc(this)">R3HAB</button>
-      <button id="artistFunc10" type="button" class="button" value="DJ Snake" onclick="artistFunc(this)">DJ
-        Snake</button>
-      <button id="artistFunc11" type="button" class="button" value="Calvin Harris" onclick="artistFunc(this)">Calvin
-        Harris</button>
+      <button id="artistFunc10" type="button" class="button" value="DJ Snake" onclick="artistFunc(this)">DJ Snake</button>
+      <button id="artistFunc11" type="button" class="button" value="Calvin Harris" onclick="artistFunc(this)">Calvin Harris</button>
     </div>
 
     <div class="row5">
 
       <a href="/suggestions"><button id="nextBtn" class="button">Next</button></a>
 
-      <script>
-        document.getElementById("nextBtn").addEventListener("click", nextFunction);
-
-        let userPreferences =
-        {
-          favGenres: "",
-          favArtists: "",
-        };
-
-        function genreFunc(genre) {
-          var btnVal = genre.innerText;
-          alert(btnVal + ' Button has been clicked');
-          userPreferences.favGenres = userPreferences.favGenres + genre.innerText + " ";
-          console.log(btnVal);
-        }
-
-        function artistFunc(artist) {
-          var btnVal2 = artist.innerText;
-          alert(btnVal2 + ' Button has been clicked');
-          userPreferences.favArtists = userPreferences.favArtists + artist.innerText + " ";
-          console.log(btnVal2);
-        }
-
-      </script>
     </div>
 
     <p style="font-size: 20px;">Don't see a genre or DJ artist listed above? You can send us your suggestions below.</p>
@@ -144,7 +108,7 @@
       DJ Artist: <input type="text" name="artist" required>
       <input type="submit" class="button" value="Submit">
     </form>
-
+    
   </main>
 </body>
 
