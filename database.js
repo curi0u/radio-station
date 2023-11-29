@@ -27,11 +27,17 @@ const playlistSchema = new mongoose.Schema({
 
 // Added database schema for userPreferences
 const userDJSchema = new mongoose.Schema({
-    DJName: String
+    DJName:
+	{
+		type: String 
+	}
     });
 
 const userGenreSchema = new mongoose.Schema({
-	GenreName: String
+	GenreName: 
+	{
+		type: String
+	}
 	});
 
 mongoose.model("Song", songSchema);
