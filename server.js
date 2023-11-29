@@ -15,6 +15,10 @@ const Song = mongoose.model("Song");
 const DJ = mongoose.model("DJ");
 const Playlist = mongoose.model("Playlist");
 
+//For userPreferences and userSuggestions
+const userPreferencesDJ = mongoose.model("userPreferencesDJ");
+const userPreferencesGenre = mongoose.model("userPreferencesGenre");
+
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
@@ -34,6 +38,16 @@ app.get('/', function(req, res) {
 // search page
 app.get('/search', function(req, res) {
   res.render('pages/search');
+});
+
+// userPreferences page
+app.get('/preferences', function(req, res) {
+  res.render('pages/userPreferences');
+});
+
+// userSuggestions page
+app.get('/suggestions', function(req, res) {
+  res.render('pages/userSuggestions');
 });
 
 // addSongFromSearch page
