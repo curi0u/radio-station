@@ -6,6 +6,9 @@ var app = express();
 const mongoose = require('mongoose');
 require("./database");
 
+//Added for userPreferences Post
+app.use(express.urlencoded({extended: true}));
+
 // connect to mongoDB
 // To drop this database for testing in mongosh, run this:
 // mongosh --eval "use myapp" --eval  "db.dropDatabase()"
@@ -16,8 +19,7 @@ const DJ = mongoose.model("DJ");
 const Playlist = mongoose.model("Playlist");
 
 //For userPreferences and userSuggestions
-const userPreferencesDJ = mongoose.model("userPreferencesDJ");
-const userPreferencesGenre = mongoose.model("userPreferencesGenre");
+const user_preferences = mongoose.model("user_preferences");
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -49,6 +51,13 @@ app.get('/preferences', function(req, res) {
 app.get('/suggestions', function(req, res) {
   res.render('pages/userSuggestions');
 });
+
+//Inserts user's preferences into the shared database
+app.post("/", async (req, res) =>{
+  const data = new user_preferences(req.body)
+  await data.save()
+  res.render('pages/userPreferences');
+})
 
 // addSongFromSearch page
 app.get('/addSongFromSearch', function(req, res) {
