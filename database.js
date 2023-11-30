@@ -25,24 +25,15 @@ const playlistSchema = new mongoose.Schema({
 	imageURL: String
 });
 
-// Added database schema for userPreferences
-const userDJSchema = new mongoose.Schema({
-    DJName:
+const userPreferenceSchema = new mongoose.Schema({
+    genre_or_DJ:
 	{
 		type: String 
 	}
     });
 
-const userGenreSchema = new mongoose.Schema({
-	GenreName: 
-	{
-		type: String
-	}
-	});
-
 mongoose.model("Song", songSchema);
 mongoose.model("DJ", djSchema);
 mongoose.model("Playlist", playlistSchema);
+mongoose.model("user_preferences", userPreferenceSchema);
 
-mongoose.model("userPreferencesDJ", userDJSchema);
-mongoose.model("userPreferencesGenre", userGenreSchema)
