@@ -1,10 +1,10 @@
 /* Search Page CSS File */
 body {
-  background-color: burlywood;
+  background-color: #E6E6FA;
 }
 
 #main-content {
-  background-color: burlywood;
+  background-color: #E6E6FA;
   flex-direction: column;
   overflow: auto;
 }

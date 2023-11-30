@@ -1,6 +1,6 @@
 /* 'Add to Playlist' Page CSS File */
 #main-content {
-  background-color: burlywood;
+  background-color: #E6E6FA;
   flex-direction: column;
   overflow: auto;
 }
@@ -200,7 +200,6 @@ td {
   background-color: #fff;
   border: 2px solid #333; /* Add a border */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a box shadow for a subtle effect */
-  position: fixed;
   width: 80%;
   max-width: 400px;
   z-index: 3; /* Higher z-index than the overlay */

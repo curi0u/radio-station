@@ -27,9 +27,9 @@ function openPlaylistPopup(playlistName, playlistSongs) {
 
   // Create playlist songs list
   const songsList = document.createElement('ul');
-  playlistSongs.forEach(song => {
+  playlistSongs.forEach((song, index) => {
     const listItem = document.createElement('li');
-    listItem.textContent = song.name;
+    listItem.textContent = (index + 1).toString() + ". " + song.artists[0] + " - " + song.name;
     songsList.appendChild(listItem);
   });
 
@@ -207,25 +207,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-
-
-  // function setUpAddToPlaylistButtons(dummyData) {
-  //   // Add event listeners for "Add to playlist" buttons
-  //   const addToPlaylistButtons = document.querySelectorAll('.add-to-playlist-button');
-  //   addToPlaylistButtons.forEach((button) => {
-  //     button.addEventListener('click', function () {
-  //       // Retrieve the playlist name based on the button's index
-  //       const index = button.getAttribute('data-index');
-  //       const playlistName = dummyData[index].name;
-
-  //       // Access the song name from the header
-  //       const songName = document.getElementById('song').textContent;
-
-  //       // Display the alert
-  //       alert(`Added "${songName}" to playlist "${playlistName}"`);
-  //     });
-  //   });
-  // }
 
   playlistsContainer.addEventListener('click', function (event) {
     // Check if the "View Playlist" button was clicked
