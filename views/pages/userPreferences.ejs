@@ -82,20 +82,12 @@
 
     <p style="font-size: 20px;">Don't see a genre or DJ artist listed above? You can send us your suggestions below.</p>
 
-    <form name="genreForm" onsubmit="return genreSuggestionForm()">
-      Genre: <input type="text" name="genre" required>
-      <input type="submit" class="button" value="Submit">
+    <form name = "suggestionForm" method = "post" action="/" onsubmit="return SuggestionForm()">
+    <label>Genre or DJ Artist: </label>
+    <input type = "text" name ="genre_or_DJ" required><br>
+    <button class="button" type="submit" value= "Submit"> Submit </button>
     </form>
-
-    <form name="artistForm" onsubmit="return artistSuggestionForm()">
-      DJ Artist: <input type="text" name="artist" required>
-      <input type="submit" class="button" value="Submit">
-    </form>
-
-    <ul>
-    <p style="font-size: 20px;">TEST.</p>
-    </ul>
-
+    
   </main>
 </body>
 </html>
