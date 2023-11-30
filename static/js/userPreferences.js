@@ -1,25 +1,6 @@
-function genreSuggestionForm() {
-    let x = document.forms["genreForm"]["genre"].value;
-    if (x == " ") {
-        alert("Error! Genre must be filled out.");
-        return false;
-    }
-    else {
-        alert("Your genre suggestion of '" + x + "'' has been submitted.");
-        return true;
-    }
-}
-
-function artistSuggestionForm() {
-    let y = document.forms["artistForm"]["artist"].value;
-    if (y == " ") {
-        alert("Error! DJ artist must be filled out.");
-        return false;
-    }
-    else {
-        alert("Your DJ Artist suggestion of '" + y + "' has been submitted.");
-        return true;
-    }
+function SuggestionForm() 
+{
+  alert("Your DJ Artist or genre suggestion has been submitted!");
 }
 
 let userPreferences =
@@ -39,14 +20,14 @@ document.getElementById("nextBtn").addEventListener("click", nextFunction);
 
 function genreFunc(genre) {
   var btnVal = genre.innerText;
-  alert(btnVal + ' Button has been clicked');
+  alert(btnVal + ' has been added to your preferences.');
   userPreferences.favGenres = userPreferences.favGenres + genre.innerText + " ";
   console.log(btnVal);
 }
 
 function artistFunc(artist) {
   var btnVal2 = artist.innerText;
-  alert(btnVal2 + ' Button has been clicked');
+  alert(btnVal2 + ' has been added to your preferences.');
   userPreferences.favArtists = userPreferences.favArtists + artist.innerText + " ";
   console.log(btnVal2);
 }
